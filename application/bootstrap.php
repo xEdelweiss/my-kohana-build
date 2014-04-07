@@ -131,17 +131,18 @@ Kohana::$config->attach(new Config_File('config/'.$environment));
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-	// 'auth'       => MODPATH.'auth',       // Basic authentication
-	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
-	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
-	// 'minion'     => MODPATH.'minion',     // CLI Tasks
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	// 'unittest'   => MODPATH.'unittest',   // Unit testing
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-        'build-modifications' => MODPATH.'build-modifications',
-        'tasks-migrations' => MODPATH.'tasks-migrations',
-	));
+	'auth'       => MODPATH.'auth',       // Basic authentication
+//	'cache'      => MODPATH.'cache',      // Caching with multiple backends
+//	'codebench'  => MODPATH.'codebench',  // Benchmarking tool
+	'database'   => MODPATH.'database',   // Database access
+	'image'      => MODPATH.'image',      // Image manipulation
+	'minion'     => MODPATH.'minion',     // CLI Tasks
+	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+//	'unittest'   => MODPATH.'unittest',   // Unit testing
+	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+    'build-modifications' => MODPATH.'build-modifications', // Custom modifications
+    'tasks-migrations'    => MODPATH.'tasks-migrations',    // DB migrations: https://github.com/kohana-minion/tasks-migrations
+    'i18n-plural'         => MODPATH.'i18n-plural',         // I18n plural: https://github.com/czukowski/I18n_Plural/tree/3.3/master
+));
 
 include APPPATH.'routes'.EXT;
