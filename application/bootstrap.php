@@ -39,6 +39,7 @@ setlocale(LC_ALL, 'ru_UA.utf-8');
  * @link http://www.php.net/manual/function.spl-autoload-register
  */
 spl_autoload_register(array('Kohana', 'auto_load'));
+require VENPATH.'autoload.php';
 
 /**
  * Optionally, you can enable a compatibility auto-loader for use with
@@ -112,7 +113,7 @@ Kohana::$environment = constant('Kohana::'.strtoupper($environment));
  */
 Kohana::init(array(
 	'base_url'   => '/',
-    'index_file' => NULL,
+    'index_file' => FALSE,
     'caching'    => Kohana::$environment != Kohana::DEVELOPMENT,
 ));
 
@@ -143,6 +144,9 @@ Kohana::modules(array(
     'build-modifications' => MODPATH.'build-modifications', // Custom modifications
     'tasks-migrations'    => MODPATH.'tasks-migrations',    // DB migrations: https://github.com/kohana-minion/tasks-migrations
     'i18n-plural'         => MODPATH.'i18n-plural',         // I18n plural: https://github.com/czukowski/I18n_Plural/tree/3.3/master
+    'kohana-assets'       => MODPATH.'kohana-assets',       // Kohana Assets: https://github.com/Zeelot/kohana-assets
+    'kohana-twig-modification'         => MODPATH.'kohana-twig-modification',         // Kohana Twig: https://github.com/bistory/kohana-twig
+    'kohana-twig'         => MODPATH.'kohana-twig',         // Kohana Twig: https://github.com/bistory/kohana-twig
 ));
 
 include APPPATH.'routes'.EXT;
